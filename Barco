@@ -1,36 +1,72 @@
 public class Barco {
-    private int tamano;
-    private String figura;
+    private int[] posicionX;
+    private int[] posicionY;
     private String ruta;
+    private int tamano;
+    private boolean estado;
+    private int numBarco;
+    private String figura;
     
-    public Barco(int tamano, String figura, String ruta){
-        this.tamano = tamano;
-        this.figura = figura;
-        this.ruta = ruta;
+    public Barco(int[] posicionX, int[] posicionY, boolean estado){
+        this.posicionX = posicionX;
+        this.posicionY = posicionY;
+        this.estado = estado;
+        this.ruta = "imagenes/"+ figura + numBarco + "/.jpg"; 
     }
 
-    public int getTamano() {
-        return tamano;
-    }
-
-    public void setTamano(int tamano) {
-        this.tamano = tamano;
-    }
-
-    public String getFigura() {
-        return figura;
-    }
-
-    public void setFigura(String figura) {
-        this.figura = figura;
-    }
-
-    public String getRuta() {
-        return ruta;
-    }
-
-    public void setRuta(String ruta) {
-        this.ruta = ruta;
+    public String getRuta(){
+        return this.ruta;
     }
     
+    public boolean getEstado(){
+        return this.estado;
+    }
+    
+    public void setEstado(boolean estado){
+        this.estado = estado;
+        if(this.estado == true){
+            this.ruta = "imagenes/"+ figura + numBarco + "/.jpg"; 
+        }else{
+            this.ruta = "imagenes/barcoDestruido/.jpg"; 
+        }
+    }
+    
+    public int getTamano(){
+        return this.tamano;
+    }
+   
+    public void setTamano(int tamano){
+        this.tamano = tamano;
+        if(this.estado == true){
+            this.ruta = "imagenes/"+ figura + numBarco + "/.jpg"; 
+        }else{
+            this.ruta = "imagenes/barcoDestruido/.jpg"; 
+        }
+    }
+    
+    public int[] getPosicionX(){
+        return this.posicionX;
+    }
+    
+    public void setPosicionX(int[] posicionX){
+        this.posicionX = posicionX;
+        if(this.estado == true){
+            this.ruta = "imagenes/"+ figura + numBarco + "/.jpg"; 
+        }else{
+            this.ruta = "imagenes/barcoDestruido/.jpg"; 
+        }
+    }
+    
+    public int[] getPosicionY(){
+        return this.posicionY;
+    }
+    
+    public void setPosicionY(int [] posicionY){
+        this.posicionY = posicionY;
+        if(this.estado == true){
+            this.ruta = "imagenes/"+ figura + numBarco + "/.jpg"; 
+        }else{
+            this.ruta = "imagenes/barcoDestruido/.jpg"; 
+        }
+    }
 }
